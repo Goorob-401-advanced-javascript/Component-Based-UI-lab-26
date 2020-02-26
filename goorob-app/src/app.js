@@ -1,63 +1,53 @@
+
 import React from 'react';
 import './app.scss';
+import Header from "./header";
+import Footer from "./footer";
 
- const Header = () =>{  //functional component 
-return ( //it will return jsx
-    <header className = "counter-app">
-        <h1>counter application using react component</h1>
-        </header>
-
-)
- } 
-
-     
- const Footer = () => {
-     return (
-         <footer>my first app using React </footer>
-     )
- }
-
- class counter extends React.Component {
-     constructor (props){
-         super(props)
-             this.state = {
-              count : 0 
-             }
-     
-     counterDecrement = event => {
-        event.preventDefault();
-        this.setState({ count: this.state.count - 1 })
-      }
-    
-      counterIncrement = event => {
-        event.preventDefault();
-        this.setState({ count: this.state.count + 1 })
-      }
-
-      render() {
-        return (
-          <div>
-               Current count: {this.state.count}
-            <button type="button" onclick={this.counterDecrement}>+</button>
-            <button type="button" onclick={this.counterIncrement}>-</button>
-          </div>
-        );
-      }
+class Counter extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            count: 0
+        };
     }
- }
+        counterDecrement = e => {
+            e.preventDefault();
+            this.setState({ count: this.state.count - 1 });
+            console.log('__STATE__' ,this.state.count )
 
-      class App extends React.Component {
+        };
+
+        counterIncrement = e => {
+            e.preventDefault();
+            this.setState({ count: this.state.count + 1 });
+            console.log('__STATE__' ,this.state.count )
+        };
+
         render() {
-          return (
-            <React.Fragment>
-              <Header />
-              <Counter />
-              <Footer />
-            </React.Fragment>
-          )
+            return (
+                <div>
+                   <section> counter : {this.state.count}</section> 
+                    <button type="button" onClick={this.counterIncrement}><span>+</span></button>
+                    <button type="button" onClick={this.counterDecrement}><span>-</span></button>
+                    
+                </div>
+            );
         }
-      }
-      
-      export default App;
-    
- 
+   
+};
+
+class App extends React.Component {
+    render() {
+        return (
+            <React.Fragment>
+                <Header />
+                <Counter />
+                <Footer />
+            </React.Fragment>
+        )
+    }
+}
+
+export default App;
+
