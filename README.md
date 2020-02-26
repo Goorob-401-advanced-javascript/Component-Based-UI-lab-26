@@ -1,5 +1,5 @@
 # Component-Based-UI-lab-26
-## Component Based UI
+
 
 ### Author: Goorob Ahmad Alswalqah
 
@@ -10,4 +10,4 @@
 
 
 #### UML
-![UML Diagram]()
+![UML Diagram](https://github.com/Goorob-401-advanced-javascript/Component-Based-UI-lab-26/blob/React/20200226_050934.jpg)
